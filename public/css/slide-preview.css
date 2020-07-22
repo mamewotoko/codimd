@@ -58,9 +58,18 @@
 }
 
 @media print {
-    size: portrait;
+    /* TODO: limit to slide mode */
+    .markdown-body.slides {
+        size: portrait;
+    }
 
     .markdown-body.slides section[data-markdown] {
+        border: solid 1px black;
+        page-break-inside: avoid;
         page-break-after: always;
+    }
+    /* do not page break after last slide, this code is does not work*/
+    .markdown-body.slides section[data-markdown]:first-child {
+        page-break-before: avoid;
     }
 }
