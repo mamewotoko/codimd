@@ -56,3 +56,11 @@
   height: 1.5em;
   border: 3px solid #777;
 }
+
+@media print {
+    size: portrait;
+
+    .markdown-body.slides section[data-markdown] {
+        page-break-after: always;
+    }
+}
